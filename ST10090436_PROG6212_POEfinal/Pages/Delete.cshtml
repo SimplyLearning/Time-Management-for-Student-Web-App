@@ -1,0 +1,28 @@
+﻿@page
+@using System.Data.SqlClient;
+
+@{
+    //error handling
+    try {
+        String ModuleCode = Request.Form["ModuleCode"];
+
+        // CHANGING THIS CONNECTION STRING TO YOUR DATABASE CONNECTION STRING IS NEEDED
+        String connString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=UsersData;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
+        using (SqlConnection sqlCon = new SqlConnection(connString)){
+            sqlCon.Open();
+
+            String query = "DELETE FROM [dbo].[tblModules] WHERE ModuleCode= @ModuleCode";
+            using (SqlCommand sqlCmd = new SqlCommand(query, sqlCon)){
+                sqlCmd.Parameters.AddWithValue("ModuleCode", ModuleCode);
+                sqlCmd.ExecuteNonQuery();
+            }
+
+        }
+
+    } 
+    catch (Exception ex)
+    {
+    }
+    Response.Redirect("/Modules");
+}

@@ -1,0 +1,92 @@
+﻿@page
+@model ST10090436_PROG6212_POEfinal.Pages.AddModulesModel
+@{
+}
+
+<!-- Title of page -->
+<br />
+<h2> New Module </h2>
+
+<!-- Error -->
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show ' role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-ds-dismiss='alert' aria-label="Close"></button>
+    </div>
+}
+
+<!-- Creating a Form -->
+<form method="POST">
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Module Code </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="ModuleCode"  />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Module Name </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="ModuleName"  />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Number Of Credits </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="NumOfCredits"  />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Hours Per Week </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="HoursPerWeek"  />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Start Date </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="StartDate"  />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Number Of Weeks </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="NumOfWeeks" />
+        </div>
+    </div>
+
+    <!-- Success -->
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show ' role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-ds-dismiss='alert' aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary"> Submit </button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class=" btn btn-outline-primary" href="/Modules" role="button"> Cancel </a>
+        </div>
+    </div>
+    <!-- (see Create ASP.NET CORE Web Application With SQL Server Database Connection and CRUD Operations - BoostMyTool, 2009). -->
+</form>
+
+<!--Referencing List:
+// Create ASP.NET CORE Web Application With SQL Server Database Connection and CRUD Operations - BoostMyTool. 2022.
+// Youtube Video, added by BoostedMyTool. [Online]. Available at: https://www.youtube.com/watch?v=T-e554Zt3n4
+// [Accessed 29 June 2022]. -->

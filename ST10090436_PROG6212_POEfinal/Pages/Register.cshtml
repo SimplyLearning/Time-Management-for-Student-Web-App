@@ -1,0 +1,62 @@
+﻿@page
+@model ST10090436_PROG6212_POEfinal.Pages.RegisterModel
+@{
+}
+<!-- Title of page -->
+<br />
+<h2> Registration For New Users </h2>
+<br />
+<br />
+<!-- Error -->
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show ' role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-ds-dismiss='alert' aria-label="Close"></button>
+    </div>
+}
+<!-- Creating a Form -->
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Username </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="txtUsername" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Password </label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" name="txtPassword" />
+        </div>
+    </div>
+
+    <!-- Success -->
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show ' role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-ds-dismiss='alert' aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary"> Submit </button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class=" btn btn-outline-primary" href="/" role="button"> Cancel </a>
+        </div>
+    </div>
+    <!-- (see Create ASP.NET CORE Web Application With SQL Server Database Connection and CRUD Operations - BoostMyTool, 2009). -->
+</form>
+
+<!--Referencing List:
+// Create ASP.NET CORE Web Application With SQL Server Database Connection and CRUD Operations - BoostMyTool. 2022.
+// Youtube Video, added by BoostedMyTool. [Online]. Available at: https://www.youtube.com/watch?v=T-e554Zt3n4
+// [Accessed 29 June 2022]. -->

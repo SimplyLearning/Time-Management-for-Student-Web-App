@@ -1,0 +1,55 @@
+﻿@page
+@model ST10090436_PROG6212_POEfinal.Pages.HoursSpentModel
+@{
+}
+<!-- Title of page -->
+<br />
+<h2> List of Hours Spent On Each Module </h2>
+<br />
+
+
+<!-- Creating a table -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Module Code</th>
+            <th>Module Name</th>
+            <th>Number of Credits</th>
+            <th>Hours Per Week</th>
+            <th>Start Date</th>
+            <th>Number of Weeks</th>
+            <th>Self Study Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.selfStudies)
+        {
+            <tr>
+                <td>@item.ModuleCode</td>
+                <td>@item.ModuleName</td>
+                <td>@item.NumOfCredits</td>
+                <td>@item.HoursPerWeek</td>
+                <td>@item.StartDate</td>
+                <td>@item.NumOfWeeks</td>
+                @*<td>@item</td>*@
+            </tr>
+        }
+    </tbody>
+    
+        
+    
+
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="col-sm-3 d-grid">
+    <a class=" btn btn-outline-primary" href="/Modules" role="button"> Cancel </a>
+</div>
+<!-- (see Create ASP.NET CORE Web Application With SQL Server Database Connection and CRUD Operations - BoostMyTool, 2009). -->
+<!--Referencing List:
+// Create ASP.NET CORE Web Application With SQL Server Database Connection and CRUD Operations - BoostMyTool. 2022.
+// Youtube Video, added by BoostedMyTool. [Online]. Available at: https://www.youtube.com/watch?v=T-e554Zt3n4
+// [Accessed 29 June 2022]. -->
